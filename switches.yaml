@@ -1,0 +1,45 @@
+- platform: mqtt
+  name: "Christmas Outside"
+  state_topic:   "stat/outsidelights/POWER"
+  command_topic: "cmnd/outsidelights/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  qos: 1
+  retain: false
+
+
+- platform: mqtt
+  name: "Christmas Tree"
+  state_topic:   "stat/ChristmasTree/POWER"
+  command_topic: "cmnd/ChristmasTree/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  qos: 1
+  retain: false
+  
+- platform: mqtt
+  name: "Bedroom Lights"
+  state_topic:   "stat/BedRoomLights/POWER"
+  command_topic: "cmnd/BedRoomLights/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  qos: 1
+  retain: false
+
+- platform: mqtt
+  name: "S200"
+  state_topic:   "stat/S200/POWER"
+  command_topic: "cmnd/S200/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  qos: 1
+  retain: false
+  
+- platform: mqtt
+  name: "S201"
+  state_topic:   "stat/S201/POWER"
+  command_topic: "cmnd/S201/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  qos: 1
+  retain: false

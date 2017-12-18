@@ -1,0 +1,86 @@
+homeassistant:
+  name: Rancho Freeman
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: imperial
+  temperature_unit: F
+  time_zone: America/Chicago
+  customize: !include customize.yaml
+
+hassio:
+
+frontend:
+
+config:
+
+http:
+  api_password: !secret http_password
+#  ssl_certificate: !secret ssl_certificate
+#  ssl_key: !secret ssl_key
+  base_url: !secret base_url
+
+device_tracker:
+  - platform: owntracks
+
+mqtt:
+  broker: !secret mqtt_broker_ip
+  port: !secret mqtt_port
+  client_id: home-assistant-1
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  protocol: 3.1
+  birth_message:
+    topic: "tele/hass1/LWT"
+    payload: "Online"
+    qos: 1
+    retain: true
+  will_message:
+    topic: "tele/hass1/LWT"
+    payload: "Offline"
+    qos: 1
+    retain: true
+  
+ios:  
+
+updater:
+
+discovery:
+  ignore:
+    - apple_tv
+
+media_player:
+  - platform: apple_tv
+    name: Apple TV
+    Host: !secret apple_tv_host
+    Login ID: !secret apple_tv_id
+    start_off: true
+
+conversation:
+
+history:
+
+logbook:
+
+map:
+
+sun:
+
+tts:
+  - platform: google
+
+panel_iframe:
+  ide:
+    title: 'IDE'
+    icon: mdi:code-braces
+    url: !secret ide_url
+
+
+group: !include groups.yaml
+automation: !include automations.yaml
+sensor: !include sensors.yaml
+script: !include_dir_merge_named scripts/
+switch: !include switches.yaml
+light: !include lights.yaml
+zone: !include zones.yaml
+

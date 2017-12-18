@@ -1,0 +1,21 @@
+- platform: mqtt
+  name: Living Room Light
+  command_topic: "cmnd/B1Light175/POWER"
+  state_topic: "stat/B1Light175/POWER"
+#  state_value_template: "{{ value_json.state }}"
+  rgb_command_topic: "cmnd/B1Light175/COLOR"
+  rgb_command_template: "{{ '#%02x%02x%02x0000'| format(red, green, blue) }}"
+#  rgb_state_topic: "stat/B1Light175/RESULT"
+  brightness_state_topic: "stat/B1Light175/RESULT"
+  brightness_value_template: "{{ value_json.DIMMER }}"
+  brightness_command_topic: "cmnd/B1Light175/DIMMER"
+  brightness_scale: 100
+  color_temp_command_topic: "cmnd/B1Light175/CT"
+#  color_temp_state_topic: "stat/B1Light175/RESULT"
+#  color_temp_value_template: "{{ value_json.CT }}"
+  qos: 0
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  retain: false
+  

@@ -1,0 +1,22 @@
+- id: Turn on Christmas Outside
+  alias: 'Turn on Christmas Outside'
+  initial_state: True
+  trigger:
+    - platform: sun
+      event: sunset
+  action:
+    - service: homeassistant.turn_on
+      entity_id: switch.christmas_outside
+    
+- id: Turn off Christmas Outside
+  alias: 'Turn off Christmas Outside'
+  initial_state: True
+  trigger:
+    - platform: time
+      at: '23:32:00'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.christmas_outside
+    - service: homeassistant.turn_off
+      entity_id: switch.christmas_tree
+    

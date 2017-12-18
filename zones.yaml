@@ -1,0 +1,26 @@
+####################################################################################
+#                                                                                  #
+#                                                                                  #
+#                                ZONES                                             #
+#                                                                                  #
+#                                                                                  #
+####################################################################################
+
+- name: Dave-Work
+  latitude: 29.467233
+  longitude: -98.418382
+  radius: 500
+  icon: mdi:flask
+
+- name: Jill-School
+  latitude: 29.354068
+  longitude: -98.131389
+  radius: 500
+  icon: mdi:school
+
+- name: Home
+  latitude: 29.404875
+  longitude: -98.106032
+  radius: 500 
+  icon: mdi:home-variant
+
