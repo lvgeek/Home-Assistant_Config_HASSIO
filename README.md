@@ -1,5 +1,6 @@
-Installation Process
-I'm currently running Home Assistant version 0.59.2. My preferred installation method is Hassio on a RPi3.
+
+I'm currently running Home Assistant version 0.59.2. 
+My preferred installation method is Hassio on a RPi3.
 
 After downloading the disk image and writing it to an SD card with Etcher
 
